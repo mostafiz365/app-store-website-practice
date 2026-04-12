@@ -17,7 +17,7 @@ const Chart = () => {
     return (
         <div className='space-y-5 py-12'>
             <div className='text-center space-y-5'>
-                    <h3 className='text-5xl font-bold text-[#001931]'>Your Installed & Uninstalled App Chart</h3>
+                    <h3 className='text-5xl font-bold text-[#001931]'>Installed & Uninstalled App Chart</h3>
                     <p className='text-xl text-[#627382]'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
             <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1, margin: 'auto' }} responsive>
