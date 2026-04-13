@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { AppContext } from '../../context/AppContextApi';
 
 const AppDetails = () => {
     const apps = useLoaderData();
     const {id} = useParams();
+    const [installBtn, setInstallBtn] = useState(false);
 
     const selectedApp = apps.find(app => app.id == id);
 
@@ -27,7 +28,7 @@ const AppDetails = () => {
                         <p>{selectedApp.ratingAvg}</p>
                         <p>{selectedApp.reviews}</p>
                     </div>
-                    <button onClick={() => handleInstallBtn(selectedApp)} className="font-semibold text-white bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-lg flex items-center gap-2.5">Install Now</button>
+                    <button onClick={() => handleInstallBtn(selectedApp, setInstallBtn(true))} className={`font-semibold ${installBtn ? 'btn btn-primary' : 'bg-linear-to-r from-[#632EE3] to-[#9F62F2]'} text-white px-4 py-3 rounded-lg flex items-center gap-2.5`}>{installBtn? 'Installed' : 'Install Now'}</button>
                 </div>
             </div>
         </div>
